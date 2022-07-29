@@ -4,19 +4,12 @@ const chalk = require('chalk');
 const { prefix } = require('../ayarlar.json')
 
 module.exports = client => {
-  var degisenOynuyor = [
-    
-    "Youtube/NoblesYT",
-    "v12 Boş Altyapı"
-    
-  ]
   
   setInterval(function() {
-    var degisenOynuyor1 = degisenOynuyor[Math.floor(Math.random() * (degisenOynuyor.length))]
-    client.user.setActivity(`${degisenOynuyor1}`);
+    client.user.setActivity(`💦| ( Sunucu ${client.guilds.cache.size} ) | ( Kullanıcı ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} ) | ( Kanal ${client.channels.cache.size} ) Hizmet Ediyorum. |`);
 
 }, 2 * 30000);
   
-  client.user.setStatus("idle"); //dnd, idle, online, offline
+  client.user.setStatus("online"); //dnd, idle, online, offline
   
 }
